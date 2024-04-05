@@ -6,3 +6,5 @@ Team Members:
 - Kyle Grentz
 - Samuel Hickman
 - Shiv Malhotra
+- Ethan Knigge
+- Austin Tarrach
