@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <style>
+
+            html {
+                background-color: lightblue;
+            }
+
+            p {
+                font-family: Arial;
+                margin: 0px;
+            }
+
+            .account {
+                box-sizing: border-box;
+                display: inline-block;
+                width: 500px;
+                height: 150px;
+                border-width: 2px;
+                border-style: solid;
+                border-color: rgb(0, 0, 0);
+            }
+
+            .account:hover {
+                cursor: pointer;
+            }
+
+            .cat-image {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                object-position: -10px;
+                border-radius: 50px;
+                margin: 5px;
+                margin-top: 25px;
+            }
+
+            .profile-information {
+                display: inline-block;
+                width: 200px;
+            }
+
+            .profile-slot {
+                box-sizing: border-box;
+                border: solid;
+                border-width: 2px;
+                vertical-align: top;
+                width: 110px;
+                height: 100%;
+                display: inline-block;
+            }
+
+            .profile-name {
+                color: black;
+                margin-top: 35px;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .account-following {
+                margin-bottom: 10px;
+            }
+
+            .profile-information {
+                color: rgb(96, 96, 96)
+            }        
+
+            .follow-column {
+                width: 150px;
+                height: 100%;
+                vertical-align: top;
+                display: inline-block;
+            }
+            
+            .follow-button {
+                color: black;
+                font-family: Arial;
+                margin-top: 52px;
+                margin-left: 50px;
+                font-size: 14px;
+                border-radius: 25px;
+                border: none;
+                background-color: rgb(61, 180, 244);
+                padding: 10px 30px 10px 30px;
+                transition: opacity .15s padding .15s margin-left .15s;
+            }
+
+            .follow-button:hover {
+                cursor: pointer;
+                padding: 10px 32px 10px 32px;
+                margin-left: 48px;
+                opacity: .8;
+            }
+
+        </style>
+    </body>
+    <head>
+        <div class="account">
+            <div class="profile-slot">
+                <img class="cat-image" src="cat.jpg">
+            </div>
+            <div class="profile-information">
+                <div class="account-name">
+                    <p class="profile-name">
+                        Account: Oliver
+                    </p>
+                </div>
+                <div class="account-following">
+                    <p class="profile-following">
+                        1,040 followers
+                    </p>
+                </div>
+                <div class="account-posts">
+                    <p class="profile-posts">
+                        567 posts
+                    </p>
+                </div>
+
+                
+            </div>
+            <div class="follow-column">
+                <button class="follow-button">
+                    Follow
+                </button>
+            </div>
+        </div>
+    </head>
+</html>

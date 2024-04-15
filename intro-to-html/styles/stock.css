@@ -1,0 +1,33 @@
+
+
+p {
+    font-family: Arial;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  .stock-value-text {
+    font-size: 30px;
+    color: black;
+    margin-bottom: 9px;
+    padding-right: 2px;
+  }
+
+  .usd-class {
+    font-size: 15px;
+    color: gray;
+  }
+
+  .increased-value-text {
+    color: green;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .time-text {
+    color: rgb(96, 96, 96);
+  }
+
+  .decreased-value-text {
+    color: rgb(216, 19, 19);
+
+  }
