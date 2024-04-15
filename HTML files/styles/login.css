@@ -1,0 +1,92 @@
+
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 590px;
+    background-color: lightgray;
+    width: 300px;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 2px;
+    border-style: solid;
+    border-radius: 2px;
+}
+
+p {
+    font-family: Arial;
+    margin: 0px;
+}
+
+.header-text {
+    font-size: 50px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.username-text {
+    margin-right: 95px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.username-box {
+    margin-bottom: 20px;
+}
+
+.username-bar {
+    height: 25px;
+    width: 90%;
+    border-radius: 3px;
+    border-width: 0px;
+}
+
+.password-box {
+    margin-bottom: 40px;
+}
+
+.password-bar {
+    width: 90%;
+    height: 25px;
+    border-radius: 3px;
+    border-width: 0px;
+}
+
+.password-text {
+    margin-right: 95px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.login-text {
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: 500;
+    color: white;
+}
+
+.login-button {
+    border-width: 0px;
+    background-color: rgb(177, 4, 38);
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.seller-text {
+    margin-top: 15px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.seller-text:hover {
+    cursor: pointer;
+    opacity: .8;
+}
