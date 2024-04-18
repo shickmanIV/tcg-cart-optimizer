@@ -34,42 +34,42 @@ p {
 
 .header-text {
     font-size: 50px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-.username-text {
-    margin-right: 95px;
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-
-.username-box {
+.account-options {
+    margin-right: 40px;
     margin-bottom: 20px;
 }
 
-.username-bar {
-    height: 25px;
-    width: 90%;
-    border-radius: 3px;
-    border-width: 0px;
-}
-
-.password-box {
-    margin-bottom: 40px;
-}
-
-.password-bar {
-    width: 90%;
-    height: 25px;
-    border-radius: 3px;
-    border-width: 0px;
-}
-
-.password-text {
+.username-text,
+.password-text,
+.first-name-text,
+.last-name-text {
     margin-right: 95px;
     font-size: 15px;
     margin-bottom: 5px;
+}
+
+.username-box,
+.password-box,
+.first-name-box {
+    margin-bottom: 10px;
+}
+
+.username-bar,
+.password-bar,
+.first-name-bar,
+.last-name-bar {
+    height: 25px;
+    width: 90%;
+    border-radius: 3px;
+    border-width: 0px;
+}
+
+.last-name-box {
+    margin-bottom: 40px;
 }
 
 .login-text {
