@@ -85,6 +85,7 @@ p {
     height: 50px;
     width: 150px;
     border-radius: 25px;
+    margin-bottom: 15px;
 }
 
 .login-button:hover {
@@ -93,7 +94,6 @@ p {
 }
 
 .seller-text {
-    margin-top: 15px;
     color: blue;
     text-decoration: underline;
 }
