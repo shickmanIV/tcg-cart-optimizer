@@ -38,6 +38,27 @@ p {
     text-align: center;
 }
 
+.bubble-option {
+    padding: 10px 20px; /* Padding around the text */
+    background-color: #fff; /* White background */
+    border: 2px solid #ddd; /* Grey border */
+    border-radius: 20px; /* Rounded corners for the bubble shape */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    font-size: 16px; /* Legible text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.bubble-option:hover {
+    background-color: #e9e9e9; /* Change background on hover */
+    transform: scale(1.05); /* Slight scale up effect */
+}
+
+.bubble-option.clicked {
+    background-color: #4CAF50; /* Change to a different color */
+    color: white; /* Change text color for better contrast */
+}
+
 .username-text {
     margin-right: 95px;
     font-size: 15px;
