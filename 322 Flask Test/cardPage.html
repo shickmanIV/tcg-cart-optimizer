@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Page</title>
+</head>
+<body>
+    <h1>Card Information</h1>
+
+    <h2 id="cardName"></h2>
+    <img id="cardImage" src="" alt="Card Image">
+    <p id="cardId"></p>
+
+    <script>
+        fetch("http://localhost:5000/search?query=" + encodeURIComponent(query))
+            .then(response => response.json())
+            .then(data => {
+                var resultsDiv = document.getElementById("results");
+                resultsDiv.innerHTML = ""; // Clear previous results
+    
+                data.forEach(card => {
+                    // Create a div element to contain the card information
+                    var cardContainer = document.createElement("div");
+    
+                    // Create an anchor element for the card name
+                    var nameElement = document.createElement("a");
+                    nameElement.textContent = card[0]; // Card name
+                    nameElement.href = 'cardPage.html?query=' + encodeURIComponent(card[0]);
+                    cardContainer.appendChild(nameElement);
+    
+                    // Add a separator between name and ID
+                    cardContainer.appendChild(document.createTextNode(" - "));
+    
+                    // Create an image element for the card image
+                    var imageElement = document.createElement("img");
+                    imageElement.src = card[1]; // Image URL
+                    imageElement.alt = card[0]; // Alt text same as card name
+                    cardContainer.appendChild(imageElement);
+    
+                    // Add a separator between image and ID
+                    cardContainer.appendChild(document.createTextNode(" - "));
+    
+                    // Create a span element for the card ID
+                    var idElement = document.createElement("span");
+                    idElement.textContent = "ID: " + card[2]; // ID
+                    cardContainer.appendChild(idElement);
+    
+                    // Append the card container to the resultsDiv
+                    resultsDiv.appendChild(cardContainer);
+    
+                    // Add a line break after each card container
+                    resultsDiv.appendChild(document.createElement("br"));
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+    
+
+
+
+    
+
+</body>
+</html>
