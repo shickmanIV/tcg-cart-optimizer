@@ -7,9 +7,10 @@
   </head>
   <body>
     <div class="login-box">
-      <div class="header-text">
-        <p>Register an Account</p>
-      </div>
+      <form action="/register" method="POST">
+        <div class="header-text">
+          <p>Register an Account</p>
+        </div>
       <div class="account-options">
         <input type="radio" name="accountType" id="buyer">Buyer<br>
         <input type="radio" name="accountType" id="seller">Seller<br>
@@ -39,7 +40,7 @@
         <input class="last-name-bar" type="text" placeholder="Enter Here">
       </div>
       <div>
-        <button class="login-button">
+        <button class="login-button" type ="submit">
           <p class="login-text">Register</p>
         </button>
       </div>
