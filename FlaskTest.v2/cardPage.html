@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Page</title>
+    <link rel="stylesheet" href="cardpage.css">
+</head>
+<body>
+    <p id="cardName"></p>
+    <img id="cardImage" src="" alt="Card Image">
+    <div class="card-info">
+        <p id="cardId" class="card-trait"></p>
+        <p id="cardSet" class="card-trait"></p>
+        <p id="cardCmc" class="card-trait"></p>
+        <p id="cardType" class="card-trait"></p>
+        <p id="cardArtist" class="card-trait"></p>
+    </div>
+    <p id="listing-title">Listings:</p>
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+    
+        // Fetch data from server
+        fetch("http://localhost:5000/search?query=" + encodeURIComponent(query))
+        .then(response => response.json())
+        .then(data => {
+            // Assuming data is a list with 3 elements: [name, image_url, id]
+            const [name, imageUrl, id, set, cmc, artist, type] = data;
+    
+            // Update the name
+            document.getElementById("cardName").innerText = name;
+    
+            // Update the image
+            const imageElement = document.getElementById("cardImage");
+            imageElement.src = imageUrl;
+            imageElement.alt = name; // Set alt text for accessibility
+    
+            // Update the ID
+            const cardIdElement = document.getElementById("cardId");
+            cardIdElement.innerText = "Card ID: " + id;
+
+            const cardSetElement = document.getElementById("cardSet");
+            cardSetElement.innerText = "Card Set: " + set;
+
+            const cardCmcElement = document.getElementById("cardCmc");
+            cardCmcElement.innerText = "Card CMC: " + cmc;
+
+            // const cardPowerElement = document.getElementById("cardPower");
+            // cardPowerElement.innerText = "Card Power: " + power;
+
+            // const cardToughElement = document.getElementById("cardTough");
+            // cardTouchElement.innerText = "Card Toughness: " + tough;
+
+            // const cardLoyalElement = document.getElementById("cardLoyal");
+            // cardLoyalElement.innerText = "Card Loyalty: " + loyal;
+
+            const cardArtistElement = document.getElementById("cardArtist");
+            cardArtistElement.innerText = "Card Artist: " + artist;
+
+            const cardTypeElement = document.getElementById("cardType");
+            cardTypeElement.innerText = "Card Type: " + type;
+
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+        });
+    </script>
+
+</body>
+</html>
