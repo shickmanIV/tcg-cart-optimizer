@@ -1,4 +1,5 @@
 from flask import Flask, request, redirect, render_template, url_for
+import SKSK.database as db
 
 app = Flask(__name__)
 
