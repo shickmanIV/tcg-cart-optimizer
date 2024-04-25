@@ -10,6 +10,7 @@
       <div class="header-text">
         <p>Buyer Login</p>
       </div>
+      <form action="/login" method="POST">
       <div class="username-text">
         <p>Username</p>
       </div>
@@ -27,7 +28,13 @@
           <p class="login-text">Login</p>
         </button>
       </div>
-      <div class="register">
+    </form>
+    {% if error %}
+        <div class="error-message">
+            <p>{{ error }}</p>
+        </div>
+    {% endif %}
+    <div class="register">
         <a href="http://127.0.0.1:5500/HTML%20files/register.html">
           <span class="seller-text">Don't have an account? Register</span>
         </a>
