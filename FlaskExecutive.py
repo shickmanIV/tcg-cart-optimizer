@@ -1,5 +1,4 @@
-from flask import Flask, request, redirect, render_template, url_for
-import SKSK.database as db
+from flask import Flask, request, redirect, render_template, url_for, Blueprint
 
 app = Flask(__name__)
 
@@ -12,9 +11,8 @@ def register_page():
     error = None
     if request.method == 'POST':
         if request.form.get('go_to_login'):
-            # Redirect to the login page if requested
             return redirect(url_for('login_page'))
-        elif validate_new_user(request.form):  # Validate the new user
+        elif validate_new_user(request.form):
             #Upload user info to database
             if register_new_user(request.form):
                 #TODO: Go to homepage
@@ -30,7 +28,6 @@ def login_page():
     error = None
     if request.method == 'POST':
         if request.form.get('go_to_registration'):
-            # Redirect to the registration page if requested
             return redirect(url_for('register_page'))
         elif validate_login(request.form):
             if log_the_user_in(request.form['username']):
@@ -41,6 +38,10 @@ def login_page():
         else:
             error = 'Invalid username/password'
     return render_template('login.html', error=error)
+
+
+
+
 
 def validate_new_user(form_data):
     # Implement user validation logic here
