@@ -1,8 +1,6 @@
 import os
 from importlib import import_module
 from flask import Flask, redirect, url_for
-import routes.register as reg #.testroute2 as t2
-import routes.login as log
 
 app = Flask(__name__)
 
