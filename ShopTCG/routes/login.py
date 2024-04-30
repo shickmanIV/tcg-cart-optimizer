@@ -1,13 +1,13 @@
 from flask import Blueprint, request, redirect, url_for, render_template
 
-bp = Blueprint('login_logic', __name__)
+bp = Blueprint('login_bp', __name__)
 
-@bp.route('/login', methods=['POST', 'GET'])
+@bp.route('/loginX', methods=['POST', 'GET'])
 def login_page():
     error = None
     if request.method == 'POST':
         if request.form.get('go_to_registration'):
-            return redirect(url_for('register_logic.register_page'))
+            return redirect(url_for('register_bp.register_page'))
         elif validate_login(request.form):
             if log_the_user_in(request.form['username']):
                 #TODO: Go to homepage

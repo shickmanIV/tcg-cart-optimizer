@@ -1,15 +1,16 @@
 from flask import Blueprint, request, redirect, url_for, render_template
 import routes.registerApp as regApp
 
-bp = Blueprint('register_logic', __name__)
+bp = Blueprint('register_bp', __name__)
 
 @bp.route('/register', methods=['POST', 'GET'])
 def register_page():
     error = None
     if request.method == 'POST':
         if request.form.get('go_to_login'):
-            return redirect(url_for('login_logic.login_page'))
+            return redirect(url_for('loginApp_bp.login'))
         elif validate_new_user(request.form):
+            print("Attempting registration")
             #Upload user info to database
             if register_new_user(request.form):
                 #TODO: Go to homepage
