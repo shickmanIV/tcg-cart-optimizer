@@ -5,7 +5,7 @@ def registerUser(form_data):
     password = form_data['password']
     first_name = form_data['first_name']
     last_name = form_data['last_name']
-    account_type = form_data['accountType']\
+    account_type = form_data['accountType']
 
     buyer = 1 if account_type == 'Buyer' else 0
     seller = 1 if account_type == 'Seller' else 0
