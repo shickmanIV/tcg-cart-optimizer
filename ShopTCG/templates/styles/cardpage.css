@@ -1,0 +1,35 @@
+html,
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+#cardName{
+    margin-top: 50px;
+    font-size: 42px; 
+    text-align: center;
+}
+
+#cardImage{
+    display: block; 
+    width: 250px; 
+    height: auto; 
+    margin-bottom: 10px; 
+    float: left; 
+    margin-left: 700px;
+    margin-right: 100px;
+}
+
+.card-trait{
+    font-size: 20px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#listing-title{
+    margin-top: 100px;
+    margin-left: 700px;
+    font-size: 28px;
+}
