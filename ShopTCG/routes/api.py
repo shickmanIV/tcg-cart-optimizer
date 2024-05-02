@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, Blueprint #pip install flask
 from flask_cors import CORS #pip install flask_cors
-from mtgsdk import Card #pip install mtgsdk
+from mtgsdk import Card
 
 bp = Blueprint('search_page_bp', __name__)
 CORS(bp)

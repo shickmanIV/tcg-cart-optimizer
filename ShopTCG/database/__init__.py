@@ -7,4 +7,8 @@ config = {
     'database': 'mtg'
 }
 
-db = mysql.connector.connect(**config)
+try:
+    db = mysql.connector.connect(**config)
+    print("Connection successful!")
+except mysql.connector.Error as err:
+    print(f"Error: {err}")

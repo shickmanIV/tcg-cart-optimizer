@@ -21,6 +21,6 @@ def registerUser(form_data):
     db.commit()
 
     cursor.close()
-    db.close()
+    #db.close()
     print("Registered new user: ", username)
     return True

@@ -10,6 +10,7 @@ def login():
     if request.method == 'POST':
         if request.form.get('go_to_registration'):
             print("Redirecting to registration")
+            cursor.close()
             return redirect(url_for('register_bp.register_page'))
         else:
             print("Attempting login")
@@ -25,11 +26,15 @@ def login():
             if user_data:
                 if password == user_data[0]:
                     # Redirect to main page if login is successful
+                    cursor.close()
                     return redirect(url_for('main_page_bp.main_page'))
                 else:
                     error_message = "Incorrect username or password"
+                    cursor.close()
                     return render_template('login.html', error=error_message)
             else:
                 error_message = "Incorrect username or password"
+                cursor.close()
                 return render_template('login.html', error=error_message)
+    cursor.close()
     return render_template('login.html')
