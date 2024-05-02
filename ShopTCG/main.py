@@ -1,9 +1,10 @@
 import os
 from importlib import import_module
 from flask import Flask, redirect, url_for
-from database import db as connection
+from flask_cors import CORS #pip install flask_cors
 
 app = Flask(__name__)
+CORS(app) #enables requests from mtg api
 
 # Dynamically import and register all routes from the routes package
 # Must run 'python main.py' INSIDE the ShopTCG directory

@@ -6,4 +6,4 @@ bp = Blueprint('main_page_bp', __name__)
 
 @bp.route('/main_page', methods=['POST', 'GET'])
 def main_page():
-    return f"TODO: Implement main page"
+    return render_template('homepage.html')
