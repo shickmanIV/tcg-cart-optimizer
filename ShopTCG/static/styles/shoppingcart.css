@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.items {
+    margin-top: 20px;
+}
+
+.item {
+    border: 1px solid #ccc;
+    padding: 10px 40px 10px 20px; /* Adjusted padding */
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.remove-btn {
+    position: absolute;
+    left: 5px; /* Adjusted left position */
+    top: 50%; /* Adjusted top position */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+
+.item-info {
+    margin-left: 40px;
+}
+
+.item-name,
+.item-description,
+.item-year {
+    margin: 0;
+}
+
+.item-price {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.checkout-btn {
+    float: right;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
+}
+

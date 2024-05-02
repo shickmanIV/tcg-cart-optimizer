@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles/shoppingcart.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <div class="items" id="items-container">
+            <!-- Items will be dynamically added here -->
+        </div>
+        <button class="checkout-btn">Checkout</button>
+    </div>
 
-  </body>
+    <script>
+        var listings = [
+            ["Card 1", "Set 1", "2020", "$2.99"],
+            ["Card 2", "Set 2", "2021", "$1.03"]
+        ];
+
+        function populateCart(listings) {
+            var itemsContainer = document.getElementById('items-container');
+            itemsContainer.innerHTML = ''; // Clear previous content
+
+            listings.forEach(function(item, index) {
+                var itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+
+                var removeBtn = document.createElement('button');
+                removeBtn.classList.add('remove-btn');
+                removeBtn.textContent = 'X';
+                removeBtn.addEventListener('click', function() {
+                    // Remove the item from the listings array and update the cart
+                    listings.splice(index, 1);
+                    populateCart(listings);
+                });
+                itemDiv.appendChild(removeBtn);
+
+                var itemInfo = document.createElement('div');
+                itemInfo.classList.add('item-info');
+
+                var itemName = document.createElement('p');
+                itemName.classList.add('item-name');
+                itemName.textContent = item[0];
+                itemInfo.appendChild(itemName);
+
+                var itemDescription = document.createElement('p');
+                itemDescription.classList.add('item-description');
+                itemDescription.textContent = item[1];
+                itemInfo.appendChild(itemDescription);
+
+                var itemYear = document.createElement('p');
+                itemYear.classList.add('item-year');
+                itemYear.textContent = item[2];
+                itemInfo.appendChild(itemYear);
+
+                itemDiv.appendChild(itemInfo);
+
+                var itemPrice = document.createElement('p');
+                itemPrice.classList.add('item-price');
+                itemPrice.textContent = item[3];
+                itemDiv.appendChild(itemPrice);
+
+                itemsContainer.appendChild(itemDiv);
+            });
+        }
+
+        populateCart(listings);
+    </script>
+</body>
 </html>
+
