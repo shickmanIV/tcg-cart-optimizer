@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="styles/homepage.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="homepage.css"> 
+</head>
+<body>
     <div class="header">
-      <input class ="search-bar" type="text" placeholder="Search Cards">
-          <button class="search-button">
-            <img class="search-icon" src="icons/search.svg">
-            <div class="tooltip">Search</div>
-          </button>
-      </div>
-  </body>
+        <form id="searchForm">
+            <input id="searchInput" class ="search-bar" type="text" placeholder="Search Cards">
+            <button type="submit" class="search-button">
+                <img class="search-icon" src="search.svg">
+                <div class="tooltip">Search</div>
+              </button>
+        </form>
+    </div>
+
+    <div id="results"></div>
+
+    <script src="script.js"></script> 
+</body>
 </html>
