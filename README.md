@@ -25,3 +25,12 @@ Usage Instrucitons (in terminal)
 
   - Press CTRL + C to stop hosting site
   - type 'exit' to quit virtural environment
+
+
+
+
+
+High Level Component Diagram
+<img width="821" alt="322 Project MVC Component Diagram" src="https://github.com/shickmanIV/tcg-cart-optimizer/assets/113073744/97fea178-a1b8-448e-9a8d-b25149a66a93">
+
+
