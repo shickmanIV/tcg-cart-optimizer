@@ -1,8 +1,8 @@
 from flask import Blueprint, request, render_template
 
-bp = Blueprint('card_page_bp', __name__)
+bp = Blueprint('card_view_bp', __name__)
 
-@bp.route('/cardPage')
-def cardPage():
+@bp.route('/cardview')
+def cardView():
     query = request.args.get('query', '')
-    return render_template('cardPage.html', query=query)
+    return render_template('cardviewpage.html', query=query)
