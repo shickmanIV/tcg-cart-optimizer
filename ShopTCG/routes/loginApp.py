@@ -3,10 +3,8 @@ from database import aws_connection as db
 
 bp = Blueprint('loginApp_bp', __name__)
 
-
-
 # Define route for login page
-@bp.route('/login', methods=['GET', 'POST'])
+@bp.route('/loginY', methods=['GET', 'POST'])
 def login():
     cursor = db.cursor()
     if request.method == 'POST':

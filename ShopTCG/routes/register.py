@@ -8,7 +8,7 @@ def register_page():
     error = None
     if request.method == 'POST':
         if request.form.get('go_to_login'):
-            return redirect(url_for('loginApp_bp.login'))
+            return redirect(url_for('login_bp.login'))
         elif validate_new_user(request.form):
             print("Attempting registration")
             #Upload user info to database
