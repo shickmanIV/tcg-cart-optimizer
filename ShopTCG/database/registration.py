@@ -1,4 +1,4 @@
-from database import db
+from database import aws_connection as db
 
 def registerUser(form_data):
     username = form_data['username']
@@ -21,6 +21,5 @@ def registerUser(form_data):
     db.commit()
 
     cursor.close()
-    db.close()
     print("Registered new user: ", username)
     return True

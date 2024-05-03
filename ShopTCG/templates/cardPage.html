@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Page</title>
-    <link rel="stylesheet" href="cardpage.css">
+    <link rel="stylesheet" href="/static/styles/cardpage.css">
 </head>
 <body>
     <p id="cardName"></p>
@@ -24,7 +24,7 @@
         const query = urlParams.get('query');
     
         // Fetch data from server
-        fetch("http://localhost:5000/search?query=" + encodeURIComponent(query))
+        fetch("http://http://127.0.0.1:5000/search?query=" + encodeURIComponent(query))
         .then(response => response.json())
         .then(data => {
             // Assuming data is a list with 3 elements: [name, image_url, id]

@@ -1,26 +1,16 @@
 from flask import Blueprint, request, redirect, url_for, render_template
+import database.loginValidator as lv
 
 bp = Blueprint('login_bp', __name__)
 
-@bp.route('/loginX', methods=['POST', 'GET'])
-def login_page():
+@bp.route('/login', methods=['POST', 'GET'])
+def login():
     error = None
     if request.method == 'POST':
         if request.form.get('go_to_registration'):
-            return redirect(url_for('register_bp.register_page'))
-        elif validate_login(request.form):
-            if log_the_user_in(request.form['username']):
-                #TODO: Go to homepage
-                return f"TODO: log user in, username: {request.form['username']}"
-            else:
-                error = 'Login failed'
+            return redirect(url_for('register_bp.register'))
+        elif lv.validateLogin(request.form):
+            return redirect(url_for('home_bp.home'))
         else:
             error = 'Invalid username/password'
     return render_template('login.html', error=error)
-
-def validate_login(form_data):
-    return True
-
-def log_the_user_in(username):
-    # Implement user login logic here
-    pass#return f"TODO: log user in, username: {username}"

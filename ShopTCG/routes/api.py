@@ -1,11 +1,11 @@
-from flask import Flask, request, jsonify #pip install flask
+from flask import Flask, request, jsonify, Blueprint #pip install flask
 from flask_cors import CORS #pip install flask_cors
-from mtgsdk import Card #pip install mtgsdk
+from mtgsdk import Card
 
-app = Flask(__name__)
-CORS(app)
+bp = Blueprint('search_page_bp', __name__)
+CORS(bp)
 
-@app.route("/search")
+@bp.route("/search")
 def search():
     query = request.args.get("query", "").lower()
     print("Received query:", query)  
@@ -37,8 +37,4 @@ def search():
             return jsonify(retCards) # List to Set to List to avoid duplicates
         else:
             print("Query not found") 
-            return jsonify([]) 
-    
-
-if __name__ == "__main__":
-    app.run(debug=True)
+            return jsonify([])

@@ -5,7 +5,7 @@ document.getElementById("searchForm").addEventListener("submit", function(event)
     var query = document.getElementById("searchInput").value;
 
     // Send query to py file
-    fetch("http://localhost:5000/search?query=" + encodeURIComponent(query))
+    fetch("http://127.0.0.1:5000/search?query=" + encodeURIComponent(query))
         .then(response => response.json())
         .then(data => {
         
@@ -27,7 +27,7 @@ document.getElementById("searchForm").addEventListener("submit", function(event)
                 // Create an anchor element for the card name
                 var nameElement = document.createElement("a");
                 nameElement.textContent = data[i]; // Name
-                nameElement.href = 'cardPage.html?query=' + encodeURIComponent(data[i+1]);
+                nameElement.href = 'cardPage?query=' + encodeURIComponent(data[i+1]);
                 cardContainer.appendChild(nameElement);
     
                 // Append the card container to the resultsDiv
