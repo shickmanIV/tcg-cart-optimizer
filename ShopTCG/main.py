@@ -20,7 +20,7 @@ for root, dirs, files in os.walk("routes"):
 
 @app.route('/')
 def index():
-    return redirect(url_for('register_bp.register_page'))
+    return redirect(url_for('register_bp.register'))
 
 if __name__ == "__main__":
     app.run(debug=True)
