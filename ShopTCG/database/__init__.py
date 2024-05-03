@@ -8,7 +8,7 @@ config = {
 }
 
 try:
-    db = mysql.connector.connect(**config)
-    print("Connection successful!")
+    aws_connection = mysql.connector.connect(**config)
+    print("mysql connection successful!")
 except mysql.connector.Error as err:
     print(f"Error: {err}")

@@ -1,4 +1,4 @@
-from database import db
+from database import aws_connection as db
 
 def registerUser(form_data):
     username = form_data['username']

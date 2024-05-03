@@ -1,7 +1,9 @@
 from flask import render_template, request, redirect, url_for, Blueprint
-from database import db
+from database import aws_connection as db
 
 bp = Blueprint('loginApp_bp', __name__)
+
+
 
 # Define route for login page
 @bp.route('/login', methods=['GET', 'POST'])
@@ -21,7 +23,6 @@ def login():
             # Check if username and password match in the database
             cursor.execute("SELECT password FROM users WHERE username = %s", (username,))
             user_data = cursor.fetchone()
-
 
             if user_data:
                 if password == user_data[0]:
